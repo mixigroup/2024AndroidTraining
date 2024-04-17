@@ -32,6 +32,7 @@ fun ToDoScreen(
     Column(modifier = modifier) {
         TaskList(
             tasks = uiState.tasks,
+            onDeleteButtonClick = viewModel::deleteTask,
             modifier = Modifier.weight(1f),
         )
 
@@ -48,11 +49,15 @@ fun ToDoScreen(
 @Composable
 private fun TaskList(
     tasks: List<Task>,
+    onDeleteButtonClick: (Task) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(modifier = modifier) {
         items(tasks) { task ->
-            TaskItem(task = task)
+            TaskItem(
+                task = task,
+                onDeleteButtonClick = { onDeleteButtonClick(task) },
+            )
             HorizontalDivider()
         }
     }

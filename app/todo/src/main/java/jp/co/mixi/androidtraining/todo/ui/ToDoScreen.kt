@@ -38,6 +38,7 @@ fun ToDoScreen(
         TaskTextField(
             value = uiState.inputText,
             onValueChange = viewModel::setInputText,
+            addButtonEnabled = uiState.addEnabled,
             onAddButtonClick = viewModel::addTask,
             modifier = Modifier.fillMaxWidth(),
         )
@@ -61,6 +62,7 @@ private fun TaskList(
 private fun TaskTextField(
     value: String,
     onValueChange: (String) -> Unit,
+    addButtonEnabled: Boolean,
     onAddButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -69,7 +71,10 @@ private fun TaskTextField(
         onValueChange = onValueChange,
         modifier = modifier,
         trailingIcon = {
-            IconButton(onClick = onAddButtonClick) {
+            IconButton(
+                onClick = onAddButtonClick,
+                enabled = addButtonEnabled,
+            ) {
                 Icon(
                     imageVector = Icons.Default.Add,
                     contentDescription = stringResource(id = R.string.add),

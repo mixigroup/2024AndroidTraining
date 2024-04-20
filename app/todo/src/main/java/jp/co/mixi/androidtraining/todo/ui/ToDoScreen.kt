@@ -13,6 +13,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -46,7 +47,7 @@ private fun TaskList(
     tasks: List<Task>,
     modifier: Modifier = Modifier,
 ) {
-    LazyColumn(modifier = modifier) {
+    LazyColumn(modifier = modifier.testTag("TaskList")) {
         items(tasks) { task ->
             TaskItem(task = task)
             HorizontalDivider()
@@ -64,7 +65,7 @@ private fun TaskTextField(
     TextField(
         value = value,
         onValueChange = onValueChange,
-        modifier = modifier,
+        modifier = modifier.testTag("TaskTextField"),
         trailingIcon = {
             IconButton(onClick = onAddButtonClick) {
                 Icon(

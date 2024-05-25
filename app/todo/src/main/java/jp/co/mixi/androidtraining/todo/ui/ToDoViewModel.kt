@@ -20,4 +20,8 @@ class ToDoViewModel : ViewModel() {
             inputText = "",
         )
     }
+
+    fun deleteTask(task: Task) {
+        uiState = uiState.copy(tasks = uiState.tasks - task)
+    }
 }

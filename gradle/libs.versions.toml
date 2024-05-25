@@ -12,11 +12,14 @@ androidx-core = "1.13.1"
 androidx-activity = "1.9.0"
 androidx-lifecycle = "2.8.0"
 androidx-compose-bom = "2024.05.00"
-coil = "2.6.0"
+jetbrains-compose = "1.6.10"
+ktor = "2.3.10"
+coil = "3.0.0-alpha06"
 junit = "4.13.2"
 detekt = "1.23.6"
 
 [libraries]
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-core = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-lifecycle-viewModel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
@@ -27,8 +30,13 @@ androidx-compose-tooling = { module = "androidx.compose.ui:ui-tooling" }
 androidx-compose-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 androidx-compose-test-junit4 = { module = "androidx.compose.ui:ui-test-junit4" }
 androidx-compose-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
-coil = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
+ktor-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+coil = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network = { module = "io.coil-kt.coil3:coil-network-ktor", version.ref = "coil" }
 junit = { module = "junit:junit", version.ref = "junit" }
+kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
 
@@ -37,4 +45,6 @@ kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "android-gradle" }
 android-library = { id = "com.android.library", version.ref = "android-gradle" }
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "jetbrains-compose" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
